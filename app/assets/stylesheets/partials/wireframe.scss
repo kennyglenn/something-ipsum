@@ -24,13 +24,12 @@ header{
     font-weight: 100;
     text-align: center;
     letter-spacing: -2px;
-    @include font-size(74,74);
+    @include font-size(74,64);
   }
 }
 
 .section-content{
   @include grid-column(11, false, true);
-  background-color: $secondary;
   border-radius: 1px;
   clear: both;
   padding: 1em;
@@ -92,7 +91,6 @@ ul{
 
 #copy{
   @include grid-column(11, false, true);
-  background: $secondary;
   clear: both;
   color: $dark;
   display: none;
@@ -118,7 +116,7 @@ footer {
     text-align: center;
     a{
       color: $primary;
-      border-bottom: 1px solid $secondary;
+      border-bottom: 1px solid $primary-d;
       text-decoration: none;
     }
   }
