@@ -1,0 +1,136 @@
+
+//Wireframe
+html {
+  font-size: 62.5%;
+}
+
+body{
+  background-color: $white;
+  font-family: Helvetica, sans-serif;
+}
+
+.container{
+  @include grid-row;
+}
+
+section{
+  @include grid-row;
+}
+
+header{
+  @include grid-column(12);
+  h1{
+    color: $primary;
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: -2px;
+    @include font-size(74,74);
+  }
+}
+
+.section-content{
+  @include grid-column(11, false, true);
+  background-color: $secondary;
+  border-radius: 1px;
+  clear: both;
+  padding: 1em;
+  overflow: auto;
+  box-shadow: 0 0 1px rgba($dark, .75);
+  @include respond-to(small) {
+    @include grid-column(8, false, true);
+  }
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.words{
+  margin-bottom: 1em;
+  padding-top: .5em;
+  overflow: auto;
+  li{
+    display: block;
+    float: left;
+    width: 24.25%;
+    margin-right: 1%;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child{
+      margin: 0;
+    }
+    a{
+      @extend %button;
+    }
+  }
+}
+
+.sentence{
+  padding-bottom: 1em;
+  li{
+    a{
+      @extend %button;
+    }
+  }
+}
+
+.paragraph{
+  li{
+    margin-bottom: .7em;
+    a{
+      @extend %button;
+    }
+  }
+}
+
+#copy{
+  @include grid-column(11, false, true);
+  background: $secondary;
+  clear: both;
+  color: $dark;
+  display: none;
+  padding: .1em 1em 1em;
+  @include font-size(16);
+  @include respond-to(small) {
+    @include grid-column(8, false, true);
+  }
+  &.open{
+    display: block;
+  }
+}
+
+footer {
+  @include grid-column(12);
+  clear: both;
+  overflow: auto;
+  @include respond-to(small) {
+    @include grid-column(8, false, true);
+  }
+  p{
+    color: $dark;
+    text-align: center;
+    a{
+      color: $primary;
+      border-bottom: 1px solid $secondary;
+      text-decoration: none;
+    }
+  }
+}
+
+::selection {
+    color: $white;
+    background: rgba($primary, .9);
+}
+
+::-moz-selection {
+    color: $white;
+    background: rgba($primary, .9);
+}
+

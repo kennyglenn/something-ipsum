@@ -1,0 +1,47 @@
+//Colors
+$primary: #fa4e41;
+$primary-d: #c3483f;
+$secondary: #aaefe5;
+
+$white: #FEFDFC;
+$dark: #5c6d66;
+
+//Font Size Mixin
+@mixin font-size($sizeValue: 1.6, $line: $sizeValue * 1.5) {
+  font-size: ($sizeValue * 1) + px;
+  line-height: ($line * 1) + px;
+  font-size: ($sizeValue / 10) + rem;
+  line-height: ($line / 10) + rem;
+}
+
+//Media Query mixin
+@mixin respond-to($media) {
+  @if $media == x-small {
+    @media only screen and (max-width: 440px) { @content; }
+  }
+  @if $media == small {
+    @media only screen and (min-width: 700px) { @content; }
+  }
+  @else if $media == medium {
+    @media only screen and (min-width: 950px) { @content; }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: 1030px) { @content; }
+  }
+}
+
+%button{
+  background-color: $primary;
+  border-radius: 1px;
+  color: $white;
+  display: block;
+  margin-bottom: .4em;
+  padding: .5em 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  @include font-size(13);
+  &:hover{
+    background-color: $primary-d;
+  }
+}
